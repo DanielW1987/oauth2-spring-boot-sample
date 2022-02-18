@@ -43,7 +43,7 @@ management:
 oauth-clients:
   client-one:
     client-id: ${CLIENT_ONE_ID}
-    client-secret: ${CLIENT_TWO_SECRET}
+    client-secret: ${CLIENT_ONE_SECRET}
     scopes:
       - "endpoint-one"
   client-two:

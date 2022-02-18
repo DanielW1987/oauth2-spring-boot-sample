@@ -1,1 +1,26 @@
+spring:
+  application:
+    name: Demo Resource Server
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://authorization-server:9000
 
+server:
+  port: 8080
+  error:
+    include-message: always
+    include-binding-errors: never
+    include-exception: false
+  tomcat:
+    accesslog:
+      enabled: true
+  shutdown: graceful
+
+management:
+  endpoints:
+    web:
+      base-path: /actuator
+      exposure:
+        include: health, info, metrics

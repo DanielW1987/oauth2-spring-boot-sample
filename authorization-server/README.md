@@ -4,14 +4,14 @@
 
 This repository contains the source code for an example OAuth 2.0 Authorization server. The service is a Java based Spring Boot application.
 
-It provides access tokens via OAuth2 client credentials flow.
+It provides access tokens via OAuth2 client credentials flow in conjunction with refresh tokens.
 
 ![OAuth2 client credentials flow](https://developer.okta.com/assets-jekyll/blog/client-credentials-spring-security/client-credentials-sequence-7fee4525b7b3e50e56ab635711468599b17126e8a8393986c572fffc2c4883b3.png)
 _Source: https://developer.okta.com_
 
 ## Requirements
 
-To start the application locally, you need to install the following:
+You need to install the following:
 
 - Java 17
 - Docker CE
@@ -28,7 +28,7 @@ To start the application locally, the following preparatory actions are necessar
     - `spring.datasource.password` (password from `docker-compose.yml`)
     - `spring.datasource.url` (`jdbc:postgresql://localhost:5432/authorization-server-db`, the database name must match `POSTGRES_DB` of service `auth-db` from `docker-compose.yml`)
 
-6. Define the `client-id` and `client-secret` for oauth clients `client-one` and `client-two`. Choose any value you want.
+3. Define the `client-id` and `client-secret` for oauth clients `client-one` and `client-two`. Choose any value you want.
 
 4. Deposit the private key and public key of your generated rsa key pair.
     - `security.authorization-server-private-key`
@@ -63,7 +63,7 @@ From these files the actual keys have to be extracted without the first and last
 ## Start the application
 
 via gradle
-- Execute command `./gradlew bootRun` in root directory
+- Execute command `./gradlew bootRun` in root directory of project
 
 via your IDE
 - Execute main class `rocks.danielw.AuthorizationServerApplication`

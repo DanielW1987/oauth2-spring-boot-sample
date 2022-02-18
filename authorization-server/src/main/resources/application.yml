@@ -38,21 +38,21 @@ management:
     web:
       base-path: /actuator
       exposure:
-        include: health, info, metrics, prometheus, flyway
+        include: health, info, metrics, flyway
 
 oauth-clients:
   client-one:
     client-id: ${CLIENT_ONE_ID}
     client-secret: ${CLIENT_ONE_SECRET}
     scopes:
-      - "endpoint-one"
+      - endpoint-one
   client-two:
     client-id: ${CLIENT_TWO_ID}
     client-secret: ${CLIENT_TWO_SECRET}
     scopes:
-      - "endpoint-two"
+      - endpoint-two
 
 security:
-  issuer-uri: "http://authorization-server:9000"
+  issuer-uri: http://authorization-server:9000
   authorization-server-private-key: ${AUTHORIZATION_SERVER_PRIVATE_KEY}
   authorization-server-public-key: ${AUTHORIZATION_SERVER_PUBLIC_KEY}

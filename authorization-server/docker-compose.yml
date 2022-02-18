@@ -16,12 +16,6 @@ services:
         target: /var/lib/postgresql/data
     ports:
       - "5432:5432"
-    deploy:
-      restart_policy:
-        condition: on-failure
-        delay: 5s
-        max_attempts: 3
-        window: 120s
 
 volumes:
   auth-db-volume:

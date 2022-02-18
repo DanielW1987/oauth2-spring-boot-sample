@@ -1,0 +1,31 @@
+version: '3.7'
+
+services:
+  auth-db:
+    container_name: auth-db
+    image: postgres:14-alpine
+    environment:
+      POSTGRES_PASSWORD: secret
+      POSTGRES_DB: authorization-server-db
+      PGDATA: /var/lib/postgresql/data/db-files/
+    networks:
+      - auth-network
+    volumes:
+      - type: volume
+        source: auth-db-volume
+        target: /var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+
+volumes:
+  auth-db-volume:
+
+networks:
+  auth-network:
+    name: auth-network

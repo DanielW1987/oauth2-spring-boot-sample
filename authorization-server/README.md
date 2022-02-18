@@ -4,7 +4,7 @@
 
 This repository contains the source code for an example OAuth 2.0 Authorization server. The service is a Java based Spring Boot application.
 
-It provides access tokens via OAuth2 client credentials flow in conjunction with refresh tokens.
+It provides access tokens via OAuth2 client credentials flow.
 
 ![OAuth2 client credentials flow](https://developer.okta.com/assets-jekyll/blog/client-credentials-spring-security/client-credentials-sequence-7fee4525b7b3e50e56ab635711468599b17126e8a8393986c572fffc2c4883b3.png)
 _Source: https://developer.okta.com_

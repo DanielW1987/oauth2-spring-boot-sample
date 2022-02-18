@@ -15,7 +15,6 @@ import java.util.Map;
 import java.util.UUID;
 
 import static org.springframework.security.oauth2.core.AuthorizationGrantType.CLIENT_CREDENTIALS;
-import static org.springframework.security.oauth2.core.AuthorizationGrantType.REFRESH_TOKEN;
 import static org.springframework.security.oauth2.core.ClientAuthenticationMethod.CLIENT_SECRET_BASIC;
 
 @Component
@@ -39,7 +38,6 @@ public class RegisteredClientInitializer implements ApplicationRunner {
                     .clientName(clientName)
                     .clientAuthenticationMethod(CLIENT_SECRET_BASIC)
                     .authorizationGrantType(CLIENT_CREDENTIALS)
-                    .authorizationGrantType(REFRESH_TOKEN)
                     .tokenSettings(TokenSettings.builder().accessTokenTimeToLive(Duration.ofMinutes(1)).build());
 
                 client.scopes().forEach(clientBuilder::scope);
